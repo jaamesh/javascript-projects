@@ -26,6 +26,9 @@ if (crewStatus && computerStatus === 'green'){
    launchReady = false;
 }
 
+//TODO: Remove this debugging statement
+console.log("launchReady after crew and computer check: ", launchReady);
+
 // if (launchReady) {
 //    console.log('10, 9, 8, 7, 6, 5, 4, 3, 2, 1...');
 //    console.log('Liftoff!');

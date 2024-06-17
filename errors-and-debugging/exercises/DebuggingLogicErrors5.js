@@ -19,10 +19,21 @@ console.log("launchReady = ", launchReady);
 
 if (crewStatus && computerStatus === 'green'){
    console.log('Crew & computer cleared.');
-   launchReady = true;
+   launchReady = launchReady && true;
 } else {
    console.log('WARNING: Crew or computer not ready!');
-   launchReady = false;
+   launchReady = launchReady && false;
 }
 
 console.log("launchReady = ", launchReady);
+
+if (launchReady) {
+   console.log("10, 9, 8...");
+   console.log("Fed parrot...");
+   console.log("6, 5, 4...");
+   console.log("Ignition...");
+   console.log("3, 2, 1...");
+   console.log("Liftoff!");
+} else {
+   console.log("Launch scrubbed.");
+}

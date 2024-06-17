@@ -17,6 +17,9 @@ if (fuelLevel >= 20000) {
    launchReady = false;
 }
 
+//TODO: Remove this debugging statement
+console.log("launchReady: ", launchReady);
+
 // if (crewStatus && computerStatus === 'green'){
 //    console.log('Crew & computer cleared.');
 //    launchReady = true;
