@@ -8,6 +8,10 @@
 // 4. Below the function, define and initialize a variable to hold a string.
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
+function reverseCharacters(strToReverse) {
+    return strToReverse.split('').reverse().join('');
+}
+
 
 // Part Two: Reverse Digits
 
@@ -16,6 +20,13 @@
 // 3. If typeof is ’number’, convert the parameter to a string, reverse the characters, then convert it back into a number.
 // 4. Return the reversed number.
 // 5. Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
+function reverseStringOrNumber(argToReverse) {
+    if (typeof argToReverse === "string") {
+        return reverseCharacters(argToReverse);
+    } else if (typeof argToReverse === "number") {
+        return reverseCharacters(argToReverse.toString()); 
+    }
+}
 
 // Part Three: Complete Reversal - Create a new function with one parameter, which is the array we want to change. The function should:
 
@@ -29,6 +40,13 @@
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+function reverseArrayComplete(arrayToReverse = arrayTest1) {
+    for (let i = 0; i < arrayToReverse.length; i++) {
+        arrayToReverse[i] = reverseStringOrNumber(arrayToReverse[i]);
+    }
+    return arrayToReverse.reverse();
+}
 
 // Bonus Missions
 
@@ -49,3 +67,9 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 // 3. Call your area function by passing in two arguments - the length and width.
 // 4. If only one argument is passed to the function, then the shape is a square. Modify your code to deal with this case.
 // 5. Use a template literal to print, “The area is ____ cm^2.”
+
+module.exports = {
+    reverseCharacters: reverseCharacters,
+    reverseStringOrNumber: reverseStringOrNumber,
+    reverseArrayComplete: reverseArrayComplete
+};
